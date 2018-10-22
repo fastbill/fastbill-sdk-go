@@ -1,4 +1,4 @@
-package helper
+package customer
 
 import (
 	"encoding/xml"
@@ -6,13 +6,15 @@ import (
 	"io/ioutil"
 )
 
-func ParseXML(path string) {
+// ParseXMLFile parses a given XML file into an
+// APIResponse struct and prints it - for testing purposes
+func ParseXMLFile(path string) {
 	dat, err := ioutil.ReadFile(path)
 	if err != nil {
 		panic(err)
 	}
 
-	var f FBAPIWithResponse
+	var f APIResponse
 	err2 := xml.Unmarshal(dat, &f)
 	if err2 != nil {
 		panic(err2)
