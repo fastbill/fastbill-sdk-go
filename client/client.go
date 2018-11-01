@@ -8,11 +8,11 @@ type Config struct {
 
 // Client holds one API client
 type Client struct {
-	config *Config
+	config Config
 }
 
 // New creates a new API client with the config
-func New(conf Config) (c *Client) {
-	c.config = &conf
+func New(conf Config) (c Client) {
+	c.config = conf
 	return
 }
